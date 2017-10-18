@@ -68,6 +68,10 @@ export default class Slider extends React.Component {
     this.innerSlider.slickGoTo(slide)
   }
 
+  getCurrentSlide() {
+    return this.innerSlider.getCurrentSlide();
+  }
+
   render() {
     var settings;
     var newProps;
