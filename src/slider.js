@@ -50,7 +50,7 @@ export default class Slider extends React.Component {
     }
   }
 
-  componentDidChange(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.breakpoint !== this.state.breakpoint) {
       this.props.onBreakpoint && this.props.onBreakpoint(this.state.breakpoint);
     }
