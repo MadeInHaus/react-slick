@@ -157,6 +157,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  };
 
+	  Slider.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
+	    if (prevState.breakpoint !== this.state.breakpoint) {
+	      this.props.onBreakpoint && this.props.onBreakpoint(this.state.breakpoint);
+	    }
+	  };
+
 	  Slider.prototype.componentWillUnmount = function componentWillUnmount() {
 	    this._responsiveMediaHandlers.forEach(function (obj) {
 	      enquire.unregister(obj.query, obj.handler);
