@@ -50,6 +50,12 @@ export default class Slider extends React.Component {
     }
   }
 
+  componentDidChange(prevProps, prevState) {
+    if (prevState.breakpoint !== this.state.breakpoint) {
+      this.props.onBreakpoint && this.props.onBreakpoint(this.state.breakpoint);
+    }
+  }
+
   componentWillUnmount() {
     this._responsiveMediaHandlers.forEach(function(obj) {
       enquire.unregister(obj.query, obj.handler);
